@@ -1,0 +1,583 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #1d273b;
+    font-weight: 300; /*Esto hace la letra más delgada.*/
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto; /*Centra todo.*/
+    overflow: hidden; /*Corta lo que se sale del contenedor, más esp. del max-width de 1000px*/
+}
+
+.contenedor1{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto; /*Centra todo.*/
+    overflow: hidden; /*Corta lo que se sale del contenedor, más esp. del max-width de 1000px*/
+    padding: 60px 0; /*60 pixeles arriba y abajo.*/
+}
+
+h1{
+    font-size: 50px;
+}
+
+/* Header */
+
+header::before{ /*Aquí se creo un elemento ficticio para que no eliminara elementos.*/
+    content: "";
+    display: block;
+    margin-bottom: 80px;
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    border-bottom: 1px solid transparent;
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2);
+    position: fixed; /*Esto hace que ese contenedor no se mueva cuando deslizas hacia abajo la página.*/
+    top: 0;
+    z-index: 100;
+    transition: ease-in-out 0.5s;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    align-items: center; /*Centrarlos verticalmente*/
+    padding: 0 40px;
+}
+
+.nav .logo{
+    height: 80px;
+}
+
+.nav .logo img{
+    height: 100%;
+    vertical-align: top;
+}
+
+.enlaces-header{
+    font-weight: 300;
+    transition: ease-in-out 0.5s; /*Esto hizo que la animación del clip-path se tardara .5s*/
+}
+
+.nav .enlaces-header a{
+    color: #5d6678;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hamburguer{
+    width: 80px;
+    height: 80px;
+    display: none; /*Lo quita por el momento*/
+    text-align: center;
+    z-index: 100;
+    cursor: pointer; /*Para cada que pase el cursor sobre él*/
+    /* transition: color 0.5s ease-in; */
+}
+
+.hamburguer > i{
+    font-size: 25px;
+    line-height: 80px;
+}
+
+.contenido-header{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*Alinearlos verticalmente.*/
+}
+
+.contenido-header>img{
+    width: 550px;
+    animation: ease-in animat 1s;
+}
+
+@keyframes animat{
+    0%{
+        transform: scale(0);
+    }100%{
+        transform: scale(1);
+    }
+}
+
+.textos-header{
+    margin: 0 0 0 30px;
+}
+
+.contenido-header p{
+    font-weight: 100;
+    margin-top: 14px;
+    color: #5d6678;
+}
+
+.contenido-header a{
+    margin: 28px 0 0 0;
+    width: 130px;
+    display: inline-block;
+    background: #1fde82;
+    text-align: center;
+    color: #fff;
+    padding: 12px 0; /*12 pixeles hacia arriba y 0 a los lados.*/
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase; /*Esto hace todo en mayusculas*/
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px rgba(31, 222, 130, .46);
+}
+
+.titulo{
+    font-size: 50px;
+}
+
+/* About us*/
+
+.about-us{
+    background: #f2f2f2;
+}
+
+.contenedor-articulo{
+    display: flex;
+    flex-wrap: wrap; /*Esto dice, que si no cabes en la misma fila, ponte debajo del otro*/
+    margin-top: 60px; /*Solo se puso el margen pero de la primera fila*/
+    justify-content: space-around; /*Es decir, espacio entre los tres*/
+}
+
+.articulo{
+    width: 29%;
+    background: #fff;
+    margin-bottom: 30px; /*Esto hizo que el texto tuviera su propio cuadro de color blanco*/
+    border-radius: 10px; /*Esto hace circular las orillas del cuadro*/
+    padding: 45px 30px 60px 30px; /*Esto hizo que el cuadro se hiciera más ancho*/
+    transition: 0.5s; /*Esto hace que se tarde un poco más en ponerse cuando le pasan el mause la sombra*/
+}
+
+.articulo:hover{ /*Esto es para cuando pasen el mause sobre él*/
+    box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
+}
+
+.articulo >i{
+    font-size: 30px; /*Esto hizo más grandes las imagenes*/
+    color: #fff;
+    background: #1fde82;
+    display: inline-block;
+    width: 70px; /*Esto hizo más ancho el cuadro*/
+    height: 70px; /*Esto también hizo más largo el cuadrado*/
+    text-align: center; /*Se alineo horizontalmente*/
+    padding: 20px; /*Esto hizo que se centrara verticalmete porque el padding solo fue de arriba*/
+    border-radius: 50%; /*Esto hace que la caja sea redonda*/
+    box-shadow: 0 8px 32px rgba(31, 222, 130, .46); /*Esto le dio sombra al botón*/
+}
+
+.articulo >h3{
+    font-size: 24px;
+    margin-top: 30px; /*Esto hizo que tuviera una separación en la parte superior*/
+}
+
+.articulo>p{
+    font-weight: 100; /*Esto es para el ancho de las letras*/
+    color: #5d6678;
+    margin-top: 15px; /*Separación de arriba*/
+    padding-bottom: 20px; /*Separación de abajo*/
+}
+
+.articulo>a{
+    color: #5d6678;
+    font-weight: 400; /*Esto es el ancho de la letra*/
+    text-decoration: none; /*Le quita el subrayado*/
+}
+
+.articulo>a:hover{
+    color: #1fde82;
+    transition: color .5s; /*Puso transition color porque la animación es del color y el tiempo que va a tardar*/
+}
+
+/* Questions*/
+
+.questions{
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*Alinearlos verticalmente.*/
+}
+
+.questions>img{
+    width: 550px;
+}
+
+.textos-questions{
+    margin: 0 0 0 30px;
+}
+
+.textos-questions p{
+    font-weight: 100;
+    margin-top: 14px;
+    color: #5d6678;
+}
+
+.textos-questions a{
+    margin: 28px 0 0 0;
+    width: 130px;
+    display: inline-block;
+    background: #1fde82;
+    text-align: center;
+    color: #fff;
+    padding: 12px 0; /*12 pixeles hacia arriba y 0 a los lados.*/
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase; /*Esto hace todo en mayusculas*/
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px rgba(31, 222, 130, .46);
+}
+
+.results{
+    background: #2570ff;
+    padding-top: 30px; /*Separación de arriba dentro del cuadro*/
+}
+
+.content-results{
+    display: flex;
+    justify-content: space-evenly; /*Hay dos secciones y las separa*/
+}
+
+.numbers{
+    width: 60%;
+    display: flex; /*Con display flex se pusieron en la misma línea*/
+    flex-wrap: wrap; /*Esto quiere decir que si uno de los elementos mide más, que se baje*/
+    justify-content: space-evenly; /*Esto los reparte de manera equitativa*/
+}
+
+.numbers .number{
+    width: 45%;
+    background: rgba(255, 255, 255, .2); /*La transparencia es de .2 y de color blanco por todos los 255*/
+    color: #fff; /*Color blanco para las letras*/
+    border-radius: 10px;
+    padding: 40px 35px; /*Un espacio de 40 pixeles arriba y abajo y 35 hacia los lados*/
+    margin-bottom: 20px; /*El margin-bottom es para que haya espacio afuera entre los otros cuadros*/
+}
+
+.numbers .number h4{
+    color: #fff;
+    font-size: 50px; /*Es el tamaño de la letra*/
+    font-weight: 500; /*Es el ancho de la letra*/
+    margin-bottom: 20px;
+}
+
+.numbers .number p{
+    color: #f2f5fc;
+    font-weight: 300;
+}
+
+/* Results*/
+
+.results-text{
+    width: 37%;
+}
+
+.results-text h4{
+    color: #fff; /*Color de la letra*/
+    font-size: 40px; /*Altura de la letra*/
+}
+
+.results-text p{
+    color: #fff;
+    font-weight: 300; /*El ancho/gordoo/flaco de la letra*/
+    margin: 20px 0; /*Un margen de 20px arriba y abajo*/
+}
+
+.results-text a{
+    color: #fff;
+    text-decoration: none; /*Quitar el interlineado*/
+    display: inline-block; /*Para poder darle un margin, padding, width, etc. Usualmete se utiliza para hacer los botones*/
+    border: 1px solid #fff;
+    padding: 10px 0;
+    width: 120px; /*Esto hizo más ancho el botón*/
+    text-align: center; /*Lo alineo horizontalmente*/
+    border-radius: 5px;
+}
+
+/* Services */
+
+.services{
+    display: flex;
+    justify-content: space-between; /*Para poner uno a lado del otro*/
+}
+
+.services>img{
+    width: 500px;
+}
+
+.box-skills{
+    margin: 30px 30px 0 0;
+}
+
+.box-skills h4{
+    font-size: 24px;
+    background: #f2f2f2;
+    width: 350px;
+    border-radius: 6px;
+    padding: 10px 0 10px 15px; /* 10px arriba y abajo y 15 a la izquierda*/
+    margin-bottom: 10px; /*Esto para que se diferencien*/
+}
+
+.box-skills i{
+    color: #1fde82; /*Cambio de color las imagenes*/
+    font-size: 20px; /*Cambio el tamaño de las imagenes*/
+}
+
+/* Footer */
+
+footer{
+    background: #f2f2f2;
+    padding: 60px 0;
+    overflow: hidden; /*Para que nada se salga de ahí*/
+    display: flex;
+    flex-wrap: wrap; /*Por si no cabe, que se pongan abajo*/
+    justify-content: space-evenly; /*Que el espacio sea equitativo*/
+    margin: auto; /*Que centre todo*/
+}
+
+.partFooter{
+    width: 20%; /*Esto quiere decir que cada parte tiene un 20%, es decir, los objetos toman un 80% y 20% se disparce*/
+    text-align: center;
+}
+
+.partFooter h4{
+    color: #1d273b;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.partFooter img{
+    width: 70%;
+}
+
+.partFooter a{
+    display: block; /*Los elementos blocke ocupan todo el espacio, por eso se ponen debajo del otro y los inline-block se ponen en una sola línea*/
+    text-decoration: none;
+    color: #5d6678;
+    font-weight: 300;
+    transition: color .3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.partFooter a:hover{
+    color: #1fde82;
+}
+
+.social-media i{
+    font-size: 20px;
+    display: inline-block; /*Para que estén a lado del otro*/
+    color: #adb6c7;
+    border: 1px solid #adb6c7;
+    border-radius: 50%; /*Se hace redondo pero conforme a la imagen, por eso después los hago un cudrado con el width y height*/
+    width: 38px;
+    height: 38px;
+    line-height: 36px; /*Esto es para que se hagan para abajo*/
+    cursor: pointer; /*Para cada que pases sobre ellos, se ponga la manita*/
+    margin-top: 20px;
+    text-align: center;
+    transition: all ease-in-out .3s;
+    margin-right: 5px;
+}
+
+.social-media i:hover{
+    color: #fff;
+    background-color: #1fde82;
+    border-color: #1fde82;
+}
+
+/* Breakpoints responsive */
+
+@media screen and (max-width:800px){
+    .titulo{
+        font-size: 45px;
+    }
+
+    .contenido-header{
+        flex-direction: column; /*Van a estar uno debajo del otro*/
+        justify-content: space-evenly;
+        height: 720px;
+    }
+
+    .contenido-header>img{
+        width: 400px;
+    }
+
+    .textos-header{
+        margin: 0;
+    }
+
+    /* About us */
+
+    .articulo{
+        width: 45%;
+    }
+
+    .questions{
+        height: 720px; /*El contenedor ya no es tan largo*/
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .questions>img{
+        width: 400px;
+    }
+
+    /* Results */
+
+    .content-results{
+        flex-direction: column-reverse; /*Es para ponerlos en columnas en el que iba a ir abajo, se ponga arriba*/
+    }
+
+    .results-text>a{
+        margin-bottom: 60px;
+    }
+
+    .numbers{
+        width: 100%;
+    }
+
+    .results-text{
+        width: 100%; /*Como ya va a ocupar el 100%, se estira el texto en el ancho de toda la página*/
+    }
+
+    /* Services */
+
+    .services{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .box-skills{
+        margin: 0 0 40px 0;
+    }
+
+    .box-skills h4{
+        width: 500px;
+    }
+
+    .services>img{
+        width: 400px;
+    }
+
+    /* Footer */
+
+    footer{
+        justify-content: space-evenly;
+    }
+
+    .partFooter{
+        width: 40%;
+        margin-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width:600px){
+    .titulo{
+        font-size: 35px;
+    }
+
+    .h1{
+        font-size: 40px;
+    }
+
+    .contenido-header{
+        height: 650px;
+    }
+
+    .nav{
+        padding: 0 10px;
+    }
+
+    .contenido-header>img{
+        width: 200px;
+    }
+
+    .enlaces-header{
+        position: fixed;
+        background: #667db6;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        top: 0; /*Esto hizo que se pusiera hasta arriba*/
+        right: 0; /*Esto hizo que se pusiera hasta la derecha*/
+        width: 100%; /*Ahora esto va a ocupar el 100% del ancho*/
+        height: 100vh; /*Ahora va a tener el 100% del height, se puso en toda la página*/
+        display: flex;
+        align-items: center; /*Se alinearon en el centro horizontalmente*/
+        flex-direction: column; /*Se pusieron en columnas*/
+        justify-content: space-evenly; /*El espacio se lo repartieron*/
+        clip-path: circle(0.0% at 100% 0); 
+    }
+
+    .nav .menudos{  /*Aquí creamos una nueva clase*/
+        clip-path: circle(150% at 100% 0);
+    }
+
+    .nav .enlaces-header a{
+        color: #fff;
+    }
+
+    .hamburguer{
+        display: block;
+    }
+
+    /* About us*/
+
+    .articulo{
+        width: 95%;
+    }
+
+    /* Questions */
+
+    .questions>img{
+        width: 200px;
+    }
+
+    /* Results */
+
+    .numbers .number{
+        width: 100%;
+    }
+
+    .results-text h4{
+        font-size: 35px;
+    }
+
+    /* Services */
+
+    .services>img{
+        width: 200px;
+    }
+
+    .box-skills h4{
+        width: 100%;
+    }
+
+    /* Footer */
+
+    .partFooter{
+        width: 95%;
+        margin-bottom: 40px;
+    }
+}
